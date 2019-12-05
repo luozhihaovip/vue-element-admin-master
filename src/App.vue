@@ -1,32 +1,61 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div class="App">
+    <HomeLayout/>
   </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import HomeLayout from '@/layout/home-layout.vue'
+export default {
+  name: 'App',
 
-#nav {
-  padding: 30px;
+  components: {
+    HomeLayout
+  },
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  filters: {
+  },
 
-    &.router-link-exact-active {
-      color: #42b983;
+  mixins: [
+  ],
+
+  props: {
+  },
+
+  data () {
+    return {
     }
+  },
+
+  computed: {
+  },
+
+  watch: {
+  },
+
+  created () {
+  },
+
+  mounted () {
+  },
+
+  methods: {
+    init () {}
   }
+}
+</script>
+
+<style lang="scss">
+*{
+  margin: 0;
+  padding: 0;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+}
+.App {
+  height: 100%;
+  width: 100%;
 }
 </style>
