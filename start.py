@@ -7,7 +7,7 @@ conn = connectMysql
 app = Flask(__name__)
 
 
-@app.route('/dev-api/article/list')
+@app.route('/article/list')
 def hello_world():
     dictm = {
         "code": 20000,
@@ -28,12 +28,12 @@ def info():
 
     return {"websocket":"true","origins":["*:*"],"cookie_needed":"false","entropy":3869736809}
 
-@app.route('/dev-api/user/info?token=admin-token')
+@app.route('/user/info?token=admin-token')
 def infoi():
 
     return {"code":20000,"data":{"roles":["admin"],"introduction":"I am a super administrator","avatar":"https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif","name":"Super Admin"}}
 
-@app.route('/dev-api/user/login', methods=['POST'])
+@app.route('/user/login', methods=['POST'])
 def hello():
 
 
@@ -41,7 +41,7 @@ def hello():
     print(re)
 
     return {"code":20000,"data":{"token":"admin-token"}}
-@app.route('/dev-api/user/login', methods=['POST'])
+@app.route('/user/login', methods=['POST'])
 def helllo():
     re = request.json
     print(re)
@@ -57,4 +57,5 @@ def get_time():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", debug=True)
+
